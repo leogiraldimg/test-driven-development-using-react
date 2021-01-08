@@ -1,0 +1,110 @@
+Test-driven development
+    TEST -> CODE -> REFACTOR
+    Types of SW Testing
+        Unit testing
+        Integration testing
+        Performance testing
+        Usability testing
+        Acceptance testing
+        Regression testing
+    Testing Frameworks
+        Mocha
+        Jasmine
+        QUnit
+        Jest
+    How to Talk Testing
+        Suite
+            describe block
+        Spec
+            Ex.: 
+                it ("concat welcome and a name when passed a name") {
+
+                }
+        Assertion
+            Ex.:
+                it ("concat welcome and a name when passed a name") {
+                    let expected = "Welcome, Chris!"
+                    let actual = welcomeMessage("Chris")
+                    expect(actual).toEqual(expected)
+                }
+        Matcher
+        Test runner
+    What should you test?
+        Does it render?
+        Does it render correctly?
+        Does it handle events correctly?
+        Do conditionals work?
+        Are edge cases handled?
+    What makes a good test?
+        Each test should be independent of the others
+        Any behavior should be specified in only one test
+        No unnecessary assertions
+        Test only one code unit at a time
+        Avoid unnecessary preconditions
+    What is the DOM?
+        Programming API for Web Pages
+        Enables Dynamic Web Pages
+        Exposes Methods and Properties
+    Imperative vs. Declarative
+        Imperative -> Angular
+            Ex.:
+                Start at the dot
+                Walk to the lake
+                Turn right and continue for 5km
+                Turn left and walk 2 km
+        Declarative -> React
+            Ex.:
+                Go to the "X"
+    Virtual DOM
+        An abstraction of the browser DOM
+        React holds two virtual DOMs
+        React optimizes DOM updates
+    React Development Process
+        https://reactjs.org/docs/thinking-in-react.html
+        Steps
+            Create a Component Hierarchy
+            Build a Static Version
+            Identify the Minimal UI State
+            Identify Where State Should Live
+            Add Inverse Data Flow
+    Enzyme
+        Documentation: https://github.com/kentcdodds/create-react-app-react-testing-library-example/blob/master/README.md
+    Types of Data in React
+        Props
+            Is passed from parent to child
+            Is immutable
+        State
+            Is modified using setState()
+            Calling setState() triggers re-render
+            State updates may be asynchronous
+    What should the state live?
+        1. Identify every component that renders something based on the state
+        2. Find a common owner (or parent)
+    Inverse Data Flow
+        React uses one-way data binding
+        Make data flow explicit
+        Update state using callbacks
+
+        Component           -- props -->             Children components
+                  <-- setState ---- event callback --
+    What should be tested in a React Component?
+        1. Test the output
+        2. Test the states
+        3. Test the events
+        4. Test the edge case
+    Pure functions
+        Always return the same result given the same argument
+        Don't depend on the state of the application
+        Don't modify the variables outside of their scope (no side effects)
+    Lifecycle Methods
+        Mount / unmount
+            - constructor()
+            - render()
+            - componentDidMount()
+            - componentWillUnmount()
+        Updating
+            - shouldComponentUpdate()
+            - render()
+            - componentDidUpdate()
+    Code coverage
+        $ npm test -- --coverage
